@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace U2quinnTXTMSG
+namespace u2GoodTimesQuinn
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -23,29 +23,47 @@ namespace U2quinnTXTMSG
         public MainWindow()
         {
             InitializeComponent();
-            
         }
 
         private void btnRun_Click(object sender, RoutedEventArgs e)
         {
-
-            txtInput.Text = txtInput.Text.Replace("TTYL", "talk to you later");
-            txtInput.Text = txtInput.Text.Replace("CUZ", "because");
-            txtInput.Text = txtInput.Text.Replace(":-)", "I'm happy");
-            txtInput.Text = txtInput.Text.Replace(":-(", "I'm sad");
-            txtInput.Text = txtInput.Text.Replace(";-)", "wink");
-            txtInput.Text = txtInput.Text.Replace(":-P", "stick out my tongue");
-            txtInput.Text = txtInput.Text.Replace("(~.~)", "sleepy");
-            txtInput.Text = txtInput.Text.Replace("TA", "totally awesome");
-            txtInput.Text = txtInput.Text.Replace("CCC", "Canadian Computing Competition");           
-            txtInput.Text = txtInput.Text.Replace("TY", "thank you");
-            txtInput.Text = txtInput.Text.Replace("YW", "you're welcome");
-            txtInput.Text = txtInput.Text.Replace("CU", "see you");
-            if(txtInput.Text.Contains("talk to you later"))
+            
+            int time = Convert.ToInt32(txtInput.Text);
+            int lasttwo = time % 100;
+            int vict = time - 300;
+            int edmo = time - 200;
+            int winn = time - 100;
+            int hali = time + 100;
+            int stjo = time + 130;
+            if (time > 2359)
             {
-                
+                lblOutput.Content = "Invalid";
             }
+            else
+            {
+                if (lasttwo > 60)
+                {
+                    lblOutput.Content = "Invalid";
+                }
+                if (lasttwo <= 30)
+                {
+                    lblOutput.Content = (time + " in Ottawa" + "\n" + vict + " in Victoria" + "\n" + edmo + " in Edmonton" + "\n" + winn + " in Winnipeg" + "\n" + time + " in Toronto" + "\n" + hali + " in Halifax" + "\n" + stjo + " in St. Johns");
+
+                }
+                else
+                {
+                       
+                    int stjohn = time + ((lasttwo - 30) + 200) - lasttwo;
+                    lblOutput.Content = (time + " in Ottawa" + "\n" + vict + " in Victoria" + "\n" + edmo + " in Edmonton" + "\n" + winn + " in Winnipeg" + "\n" + time + " in Toronto" + "\n" + hali + " in Halifax" + "\n" + stjohn + " in St. Johns");
+
+                }
+               
+            }
+            
+            
+            
+
+            
         }
-        
     }
 }
