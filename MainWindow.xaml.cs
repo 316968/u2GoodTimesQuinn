@@ -1,3 +1,7 @@
+// Quinn Parker-Joyes
+// March 29 2018
+// Good times
+// Time in ottawa is entered, time in other Canadian cities is the output
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -45,25 +49,56 @@ namespace u2GoodTimesQuinn
                 {
                     lblOutput.Content = "Invalid";
                 }
-                if (lasttwo <= 30)
+                if (lasttwo < 30)
                 {
+                    int stjohns = time + 130;
+                    if (hali >= 2400)
+                    {
+                        stjo = time - 2270;
+                        hali = time - 2300;
+                        lblOutput.Content = (time + " in Ottawa" + "\n" + vict + " in Victoria" + "\n" + edmo + " in Edmonton" + "\n" + winn + " in Winnipeg" + "\n" + time + " in Toronto" + "\n" + hali + " in Halifax" + "\n" + stjo + " in St. Johns");
+                    }  
+                    if (time < 100)
+                    {
+                        winn = 2400 - (100 - time);
+                    }
+                    if (time < 200)
+                    {
+                        edmo = 2400 - (200 - time);
+                    }
+                    if (time < 300)
+                    {
+                        vict = 2400 - (300 - time);
+                    }
                     lblOutput.Content = (time + " in Ottawa" + "\n" + vict + " in Victoria" + "\n" + edmo + " in Edmonton" + "\n" + winn + " in Winnipeg" + "\n" + time + " in Toronto" + "\n" + hali + " in Halifax" + "\n" + stjo + " in St. Johns");
 
                 }
                 else
                 {
-                       
-                    int stjohn = time + ((lasttwo - 30) + 200) - lasttwo;
-                    lblOutput.Content = (time + " in Ottawa" + "\n" + vict + " in Victoria" + "\n" + edmo + " in Edmonton" + "\n" + winn + " in Winnipeg" + "\n" + time + " in Toronto" + "\n" + hali + " in Halifax" + "\n" + stjohn + " in St. Johns");
+                    if (time < 100)
+                    {
+                        winn = 2400 - (100 - time);
+                    }
+                    if (time < 200)
+                    {
+                        edmo = 2400 - (200 - time);
+                    }
+                    if (time < 300)
+                    {
+                        vict = 2400 - (300 - time);
+                    }
 
-                }
-               
-            }
-            
-            
-            
 
-            
+                    stjo = time + ((lasttwo - 30) + 200) - lasttwo;
+                    if (hali >= 2400)
+                    {
+                        stjo = time - 2230;
+                        hali = time - 2300;
+                        lblOutput.Content = (time + " in Ottawa" + "\n" + vict + " in Victoria" + "\n" + edmo + " in Edmonton" + "\n" + winn + " in Winnipeg" + "\n" + time + " in Toronto" + "\n" + hali + " in Halifax" + "\n" + stjo + " in St. Johns");
+                    }
+                    lblOutput.Content = (time + " in Ottawa" + "\n" + vict + " in Victoria" + "\n" + edmo + " in Edmonton" + "\n" + winn + " in Winnipeg" + "\n" + time + " in Toronto" + "\n" + hali + " in Halifax" + "\n" + stjo + " in St. Johns");                    
+                }               
+            }                                    
         }
     }
 }
